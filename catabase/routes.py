@@ -2,6 +2,7 @@ from catabase import app
 from flask import render_template, request, flash
 from forms import ContactForm
 from flask.ext.mail import Message, Mail
+from models import db
 
 mail = Mail()
 
@@ -12,6 +13,13 @@ def home():
 @app.route('/about')
 def about():
 	return render_template('about.html')
+
+@app.route('/testdb')
+def testdb():
+	if db.session.query("1").from_statement("SELECT 1").all():
+		return 'It works.'
+	else:
+		return 'Something is broken.'
 
 @app.route('/contact', methods=['GET', 'POST'])
 def contact():
