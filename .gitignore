@@ -2,4 +2,9 @@
 .DS_Store
 config.py
 config.pyc
-.pyc
+
+
+# ignore pyc files
+*.pyc
+!spec/*.pyc
+
