@@ -6,6 +6,13 @@ from models import db
 
 mail = Mail()
 
+# routes to errors
+
+@app.errorhandler(404)
+def page_not_found(e):
+    return render_template('404.html'), 404
+
+# routes to pages
 @app.route('/')
 def home():
 	return render_template('home.html')
@@ -20,6 +27,10 @@ def testdb():
 		return 'It works.'
 	else:
 		return 'Something is broken.'
+
+@app.route('/browse')
+def browse():
+	return render_template('browse.html')
 
 @app.route('/contact', methods=['GET', 'POST'])
 def contact():
@@ -40,4 +51,4 @@ def contact():
 			return render_template('contact.html', success=True)
 
 	elif request.method == 'GET':
-		return render_template('contact.html', form=form)
+		return render_template('contact.html', form=form)		
