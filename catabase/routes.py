@@ -1,6 +1,6 @@
 from catabase import app
 from flask import render_template, request, flash
-from forms import ContactForm
+from forms import ContactForm, AuthForm
 from flask.ext.mail import Message, Mail
 from models import db
 
@@ -13,9 +13,12 @@ def page_not_found(e):
     return render_template('404.html'), 404
 
 # routes to pages
-@app.route('/')
+
+@app.route('/', methods=['GET', 'POST'])
 def home():
-	return render_template('home.html')
+	form = AuthForm()
+	if request.method == 'GET':
+		return render_template('home.html', form=form)	
 
 @app.route('/about')
 def about():
@@ -51,4 +54,4 @@ def contact():
 			return render_template('contact.html', success=True)
 
 	elif request.method == 'GET':
-		return render_template('contact.html', form=form)		
+		return render_template('contact.html', form=form)	

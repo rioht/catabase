@@ -7,3 +7,7 @@ class ContactForm(Form):
 	subject = TextField("Subject", [validators.Required("Please enter a subject line.")])
 	message = TextAreaField("Message", [validators.Required("Please enter a message.")])
 	submit = SubmitField("Send")
+
+class AuthForm(Form):
+	password = TextField("")
+	submit = SubmitField("Enter")

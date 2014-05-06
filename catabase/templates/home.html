@@ -8,11 +8,18 @@
         </ul>
 {% endblock %}
 {% block first %}
-		<h2 style="text-align:center">Enter the Catabase</h2>
-	<div class="jumbotron">
-        <h1>Eva's Cats</h1>
-        <p class="lead">UNLEASH THE CATABASE</p>
-        <p><a class="btn btn-lg btn-success" href="#" role="button">Sign up today</a></p>
+<h1 style="text-align:center">Browse the Catabase</h1>
+	<div class="jumbotron">        
+        <p class="lead">The password...?</p>
+
+<form action="{{ url_for('browse') }}" method=post>
+
+{{ form.password.label }}
+{{ form.password }}
+
+<div class="center-div">{{ form.submit }}
+	</form>
+	</div>
     </div>
 
     <!--this stuff is here for testing out css positioning-->
