@@ -9,6 +9,17 @@
 {% endblock %}
 {% block first %}
 <h2 style="text-align:center">About, yo.</h2>
-<p>two pictures below - me and eva?</p>
-<p>This webapp was built in a week using Flask and a few associated packages. It's David Cha's first webapp and he's excited to bring it to life!</p>
+<div class="jumbotron"> 
+<div class="about-wrapper">
+<img src="{{ url_for('static', filename='images/dave.jpg') }}"></div>
+<p class="lead">Dave Cha is a NYC native and huge cat lover. He takes his coffee black, his beer stout, and his whiskey neat. This is his first web application, and his cat <a href="http://i.imgur.com/lE6S3r6.jpg">Athena</a> spent most of her time sleeping while he worked on this.</p>
+<div style="clear: both;"></div>
+<div class="about-wrapper">
+<img src="{{ url_for('static', filename='images/eva.jpg') }}"></div>
+<p class="lead">Eva Prokop works on Wall Street on weekdays, but on nights and weekends you can find her all over NYC helping furry feline friends find forever homes. Like at <a href="http://www.ps9pets.com">P.S. 9 Pets</a> and <a href="http://muddypawsny.com">Muddy Paws!</a></p>
+<div style="clear: both;"></div>
+
+<p class="lead">The <a href="https://github.com/rioht/catabase">Catabase</a> is powered by <a href="https://www.python.org">Python</a>, <a href="http://flask.pocoo.org">Flask</a>, <a href="http://getbootstrap.com">Bootstrap</a>, and <a href="http://www.sqlite.org">SQLite</a>. It also uses <a href="https://github.com/jeffknupp/sandman">Sandman</a>, an awesome project by Jeff Knupp.</p>
+<p>Got questions? Go <a href="{{ url_for ('contact') }}">here</a>.</p>
+</div>
 {% endblock %}

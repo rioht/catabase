@@ -1,9 +1,13 @@
 /* Space out content a bit */
+html {
+  position: relative;
+  min-height: 100%;
+}
+
 body {
   padding-top: 1%;
-  padding-bottom: 1%;
   height:100%;
-  margin:0;
+  margin-bottom: 60px;
 }
 
 /* Everything but the jumbotron gets side spacing for mobile first views */
@@ -33,8 +37,10 @@ body {
   color: #777;
   border-top: 1px solid #e5e5e5;
   padding-top: 1%;
-  width: 100%;
-  height: 10%;
+  width: 50%;
+  height: 60px;
+  bottom: 0;
+  position:absolute;
 }
 
 /* Customize container */
@@ -49,7 +55,7 @@ body {
 
 /* Main marketing message and sign up button */
 .jumbotron {
-  text-align: center;
+  text-align: none; /*was center, used another wrapper to re-center */
   border-bottom: 1px solid #e5e5e5;
 }
 .jumbotron .btn {
@@ -211,10 +217,18 @@ form input#submit:active {
   border-radius: 6px;
 }
 
-.center-div
-{
+.center-div {
   margin: 0 auto;
   width: 17%;
   height: 17%;
   padding-top: 10px;
+}
+
+.about-wrapper {
+  float:left;
+  margin:8px;
+}
+
+.home-wrapper {
+  text-align:center;
 }
